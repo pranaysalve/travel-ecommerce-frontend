@@ -1,0 +1,14 @@
+{
+  "status": "success",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MmFkMTlkMzg3NmQxNzRjMTYzMmI2NyIsImlhdCI6MTY5NzkxNDQyOCwiZXhwIjoxNzAwNTA2NDI4fQ.GeY8yfsWTlgm1TKIv7GNhyKpD3HC_K_cZWWzdhVBYC0",
+  "data": {
+    "user": {
+      "_id": "652ad19d3876d174c1632b67",
+      "name": "Pranay Salve",
+      "email": "pranaysalve24@gmail.com",
+      "photo": "default.jpg",
+      "role": "user",
+      "__v": 0
+    }
+  }
+}
