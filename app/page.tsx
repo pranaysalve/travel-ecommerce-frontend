@@ -28,13 +28,6 @@ const Home = () => {
         <div className='flex-center home__text-container items-center justify-center'>
           <h1 className="text-4xl font-extrabold lowercase">Explore your destinations!</h1>
         </div>
-        <div className='home__filters'>
-          <SearchBar />
-          <div className='home__filter-container'>
-            <CustomFilter title='fuel' options={fuels} />
-            <CustomFilter title='year' options={yearsOfProduction} />
-          </div>
-        </div>
         {!isLoading ? (
           <section>
             <div className='home__cars-wrapper'>
@@ -48,7 +41,6 @@ const Home = () => {
         ) : (
           <div className='home__error-container'>
             <h2 className='text-black text-xl font-bold'>Loading Data</h2>
-            {/* <p>{allCars?.message}</p> */}
           </div>
         )}
       </div>

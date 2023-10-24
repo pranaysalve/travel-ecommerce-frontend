@@ -1,7 +1,7 @@
 'use client'
 
 import { createContext, useEffect, useState } from 'react';
-import { GetCartItems, AddItemsToCart, AddRemoveCoupon } from './cart.service';
+import { GetCartItems, AddItemsToCart, AddRemoveCoupon, RemoveItemsFromCart } from './cart.service';
 export const CartContext = createContext()
 
 export const CartContextProvider = ({ children }: any) => {
@@ -33,7 +33,7 @@ export const CartContextProvider = ({ children }: any) => {
     }
 
     const addCartItem = (data: string) => {
-        console.log({ data })
+        setIsLoading(true)
         AddItemsToCart(data)
             .then((res) => {
                 setCartItems(res.data.data.data)
@@ -45,8 +45,20 @@ export const CartContextProvider = ({ children }: any) => {
 
     }
 
+    const removeCartItem = (data: object) => {
+        setIsLoading(true)
+        RemoveItemsFromCart(data)
+            .then((res) => {
+                setCartItems(res.data.data.data)
+                setIsLoading(false)
+            }).catch(err => {
+                setError(err);
+                setIsLoading(false)
+            })
+    }
+
     return (
-        <CartContext.Provider value={{ cartItems, isLoading, error, coupon, getAllCartItems, addCartItem, addRemoveCoupon }}>
+        <CartContext.Provider value={{ cartItems, isLoading, error, coupon, getAllCartItems, addCartItem, addRemoveCoupon, removeCartItem }}>
             {children}
         </CartContext.Provider>
     )

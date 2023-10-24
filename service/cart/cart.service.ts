@@ -10,9 +10,12 @@ export const AddItemsToCart = (data: object) => {
   return doc;
 };
 
-export const AddRemoveCoupon= (coupon: string, type: string) => {
-  const doc = api.post("/cart/coupon", { coupon: coupon, type: type });
+export const RemoveItemsFromCart = (data: object) => {
+  const doc = api.delete("/cart", { data: data });
   return doc;
 };
 
-
+export const AddRemoveCoupon = (coupon: string, type: string) => {
+  const doc = api.post("/cart/coupon", { coupon: coupon, type: type });
+  return doc;
+};

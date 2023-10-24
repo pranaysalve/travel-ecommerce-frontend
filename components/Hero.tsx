@@ -8,25 +8,25 @@ const Hero = () => {
     }
     return (
         <div className='hero'>
-            <div className='flex-1 w-full h-screen relative'>
-                <Image alt='Image' src={'https://cdn.pixabay.com/photo/2019/03/31/14/31/houses-4093227_1280.jpg'} width={1000} height={500} className='w-full  absolute' />
-                {/* <div className='hero__image-container'>
-                    <div className="hero__image">
-                        <Image src="https://cdn.pixabay.com/photo/2019/03/31/14/31/houses-4093227_1280.jpg" alt="hero" fill className='object-contain' />
+
+
+            <section className="bg-center bg-no-repeat bg-cover w-full bg-[url('https://cdn.pixabay.com/photo/2018/08/29/22/52/woman-3640935_1280.jpg')] bg-gray-400 bg-blend-multiply">
+                <div className="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
+                    <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">Your are here to see the world!</h1>
+                    <p className="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">lets travel together, we are here to get you to your dream destination</p>
+                    <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
+                        <a href="#" className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
+                            Tours
+                            <svg className="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                            </svg>
+                        </a>
+                        <a href="#" className="inline-flex justify-center hover:text-gray-900 items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg border border-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-400">
+                            Blogs
+                        </a>
                     </div>
-                    <div className='hero__image-overlay' />
-
                 </div>
-                <h1 className='hero__title'>Find, Book and Rent a Car --- Quickly & Easily</h1>
-                <p className="hero__subtitle">Streamline your car rental experience with our effortless booking process....</p>
-                <CustomButton
-                    title="Explore Cars"
-                    containerStyles="bg-primary-blue text-white rounded-full mt-10"
-                    handleClick={handleScroll}
-                /> */}
-            </div>
-
-
+            </section>
         </div>
 
     )

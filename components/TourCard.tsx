@@ -48,10 +48,10 @@ const TourCard = ({ index, tour }: TourCardProps,) => {
     const addToCart = (data: object) => {
         addCartItem(data);
     }
-    useEffect(() => {
-        getAllCartItems()
-    }, [])
-    console.log({ cartItem });
+    // useEffect(() => {
+    //     getAllCartItems()
+    // }, [])
+    // console.log({ cartItem });
 
     // const viewTour = (tour: ITourProps) => {
     //     router.push(`/tour/${tour.id}`)
