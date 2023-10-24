@@ -17,7 +17,12 @@ const Cart = () => {
     // }
 
     const CouponHandler = (e: any, couponString: string, couponType: string) => {
-        if (couponType === 'add' || couponType === 'remove') {
+        e.preventDefault()
+        if (couponType === 'add') {
+            addRemoveCoupon(addCoupon, couponType);
+            getAllCartItems();
+        }
+        if (couponType === 'remove') {
             addRemoveCoupon(addCoupon, couponType);
             getAllCartItems();
         }
