@@ -25,11 +25,12 @@ const Navbar = () => {
                         handleClick={() => router.push('/cart')}
                     />
                     <CustomButton
-                        title='Sign In'
+                        title='Bookings'
                         btnType='button'
                         containerStyles=' font-bold text-primary-blue rounded-full bg-white min-w-[130px]'
                         iconType='icon'
                         rightIcon={<AiOutlineUser size={20} />}
+                        handleClick={()=> router.push('/bookings')}
                     />
                 </div>
 

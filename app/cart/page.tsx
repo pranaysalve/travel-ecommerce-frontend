@@ -4,11 +4,12 @@ import { CartContext } from '@/service/cart/cart.context'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation';
 import React, { useContext, useEffect } from 'react'
+import { CheckoutContext } from '@/service/checkout/checkout.context';
 
 const Cart = () => {
     const router = useRouter()
     const { cartItems, isLoading, error, getAllCartItems, coupon, addRemoveCoupon, removeCartItem } = useContext(CartContext)
-
+    const { checkout } = useContext(CheckoutContext)
     const [addCoupon, setAddCoupon] = useState('');
     const [type, setType] = useState('');
 
@@ -30,10 +31,10 @@ const Cart = () => {
     useEffect(() => {
         getAllCartItems();
     }, [])
-    console.log({ cartItems })
+
     return (
         <div>
-            {!isLoading && cartItems && <div className=" bg-gray-100 pt-20 mb-36">
+            {!isLoading && cartItems && cartItems[0] && <div className=" bg-gray-100 pt-20 mb-36">
                 <h1 className="mb-10 text-center text-2xl font-bold">Cart Items</h1>
                 <div className="mx-auto max-w-5xl justify-center px-6 md:flex md:space-x-6 xl:px-0">
                     <div className="rounded-lg md:w-2/3">
@@ -88,10 +89,17 @@ const Cart = () => {
                                 <p className="text-sm text-gray-700">including Taxes</p>
                             </div>
                         </div>
-                        <button className="mt-6 w-full rounded-md bg-blue-500 py-1.5 font-medium text-blue-50 hover:bg-blue-600">Check out</button>
+                        <button className="mt-6 w-full rounded-md bg-blue-500 py-1.5 font-medium text-blue-50 hover:bg-blue-600" onClick={() => checkout(cartItems)}>Check out</button>
                     </div>
                 </div>
             </div>}
+            {!isLoading &&
+                <>
+                    {cartItems && !cartItems[0] && <div className="mx-auto justify-center px-6 h-screen items-center align-middle md:space-x-6 xl:px-0">
+                        <h1 className="mb-10 text-center text-2xl align-middle font-bold">Empty Cart</h1>
+                    </div>}
+                </>
+            }
         </div >
     )
 }
